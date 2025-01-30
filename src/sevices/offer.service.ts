@@ -3,7 +3,7 @@ import { PrismaClient, User } from "@prisma/client";
 
 const prisma = new PrismaClient()
 
-export class UserService {
+export class OfferService {
     static async getByEmail(email: string) {
         const findUser = await prisma.user.findUnique({ where: { email }, omit: { password: true } })
         if (!findUser) throw new HTTPException(404, 'User not found')
