@@ -20,14 +20,14 @@ model User {
     surname             String?
     email               String   @unique
     password            String
-    role                String?
-    course              String? // admin  vip  null
+    role                String? // admin  vip   null
+    course              String?
     active              Boolean  @default(true)
     acceptNotifications Boolean  @default(true)
     createdAt           DateTime @default(now())
-    updateAt            DateTime @updatedAt
+    updatedAt           DateTime @updatedAt
 
-    Offers Offer[]
+    offers Offer[]
     rates  Rate[]
 }
 
@@ -44,6 +44,7 @@ model Offer {
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
+    //FK
     idCategory Int?
     category   Category? @relation(fields: [idCategory], references: [id])
 
