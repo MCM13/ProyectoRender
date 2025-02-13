@@ -2,8 +2,8 @@ import { Router } from "express";
 import { loginValidation, offerValidation, rateValidation, registerValidation } from "../middlewares/validators.middleware";
 import { ValidationMiddleware } from "../middlewares/validation.middleware";
 import { OfferController } from "../controllers/offer.controller";
-import { isAuthenticate } from "@/middlewares/auth.middleware";
-import { isAdmin } from "@/middlewares/isAdmin.middleware";
+import { isAuthenticate } from "../middlewares/auth.middleware";
+import { isAdmin } from "../middlewares/isAdmin.middleware";
 const router = Router()
 
 //API REST FULL
