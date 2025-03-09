@@ -2,8 +2,8 @@ import { Router } from "express";
 import { loginValidation, offerValidation, rateValidation, registerValidation } from "../middlewares/validators.middleware";
 import { ValidationMiddleware } from "../middlewares/validation.middleware";
 import { OfferController } from "../controllers/offer.controller";
-import { isAuthenticate } from "../middlewares/auth.middleware";
-import { isAdmin } from "../middlewares/isAdmin.middleware";
+import { isAuthenticate } from "@/middlewares/auth.middleware";
+import { isAdmin } from "@/middlewares/isAdmin.middleware";
 const router = Router()
 
 //API REST FULL
@@ -24,6 +24,7 @@ router.put('/:id', isAuthenticate, isAdmin, offerValidation, ValidationMiddlewar
 router.post('/:id/rate/', isAuthenticate, rateValidation, OfferController.rate)
 // Vemos que calificación (total) se le ha data a una oferta X
 router.get('/:id/rate/', isAuthenticate, OfferController.getRate)
+router.get('/:id/myRate/', isAuthenticate, OfferController.getMyRate)
 
 
 

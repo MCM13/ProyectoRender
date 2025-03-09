@@ -1,10 +1,10 @@
-import { isAuthenticate } from "../middlewares/auth.middleware";
+import { isAuthenticate } from "@/middlewares/auth.middleware";
 import { CategoryController } from "../controllers/category.controller";
 import { OfferController } from "../controllers/offer.controller";
 import { Router } from "express";
-import { isAdmin } from "../middlewares/isAdmin.middleware";
-import { categoryValidation } from "../middlewares/validators.middleware";
-import { ValidationMiddleware } from "../middlewares/validation.middleware";
+import { isAdmin } from "@/middlewares/isAdmin.middleware";
+import { categoryValidation } from "@/middlewares/validators.middleware";
+import { ValidationMiddleware } from "@/middlewares/validation.middleware";
 const router = Router();
 
 router.get("/", isAuthenticate, CategoryController.getAll);

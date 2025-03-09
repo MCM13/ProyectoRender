@@ -1,4 +1,3 @@
-
 import { Router } from "express";
 import { isAuthenticate } from "../middlewares/auth.middleware";
 import { UserController } from "../controllers/user.controller";
